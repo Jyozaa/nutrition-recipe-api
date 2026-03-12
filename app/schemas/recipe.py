@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class RecipeBase(BaseModel):
@@ -12,6 +12,22 @@ class RecipeBase(BaseModel):
 
     difficulty_level: str | None = None
     category_id: int | None = None
+
+    @field_validator("name")
+    @classmethod
+    def validate_name(cls, value: str) -> str:
+        cleaned = value.strip()
+        if not cleaned:
+            raise ValueError("Recipe name cannot be empty.")
+        return cleaned
+
+    @field_validator("instructions")
+    @classmethod
+    def validate_instructions(cls, value: str) -> str:
+        cleaned = value.strip()
+        if not cleaned:
+            raise ValueError("Instructions cannot be empty.")
+        return cleaned
 
 
 class RecipeCreate(RecipeBase):
@@ -39,7 +55,29 @@ class RecipeIngredientUpdate(BaseModel):
 
 class RecipeIngredientResponse(BaseModel):
     id: int
+    recipe_id: int
     ingredient_id: int
+    ingredient_name: str
     quantity_g: float
 
     model_config = {"from_attributes": True}
+
+
+class RecipeDetailIngredient(BaseModel):
+    ingredient_id: int
+    ingredient_name: str
+    quantity_g: float
+
+
+class RecipeDetailResponse(BaseModel):
+    id: int
+    name: str
+    description: str | None
+    instructions: str
+    servings: int
+    prep_time_minutes: int
+    cook_time_minutes: int
+    difficulty_level: str | None
+    category_id: int | None
+    category_name: str | None
+    ingredients: list[RecipeDetailIngredient]

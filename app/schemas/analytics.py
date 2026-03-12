@@ -30,3 +30,14 @@ class CostResponse(BaseModel):
 class DifficultyResponse(BaseModel):
     score: int
     difficulty: str
+
+
+class RecipeSummaryResponse(BaseModel):
+    recipe_id: int
+    recipe_name: str
+    value: float
+
+
+class CategoryCountResponse(BaseModel):
+    category_name: str
+    recipe_count: int

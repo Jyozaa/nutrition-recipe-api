@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models.category import Category
+from app.models.recipe import Recipe
 from app.schemas.category import CategoryCreate, CategoryResponse, CategoryUpdate
 
 router = APIRouter(prefix="/categories", tags=["Categories"])
@@ -26,7 +27,7 @@ def create_category(category_data: CategoryCreate, db: Session = Depends(get_db)
 
 @router.get("/", response_model=list[CategoryResponse])
 def list_categories(db: Session = Depends(get_db)):
-    return db.query(Category).all()
+    return db.query(Category).order_by(Category.name.asc()).all()
 
 
 @router.get("/{category_id}", response_model=CategoryResponse)
@@ -53,6 +54,16 @@ def update_category(
             detail="Category not found."
         )
 
+    duplicate = db.query(Category).filter(
+        Category.name == category_data.name,
+        Category.id != category_id
+    ).first()
+    if duplicate:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Another category with this name already exists."
+        )
+
     for key, value in category_data.model_dump().items():
         setattr(category, key, value)
 
@@ -68,6 +79,13 @@ def delete_category(category_id: int, db: Session = Depends(get_db)):
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Category not found."
+        )
+
+    recipe_exists = db.query(Recipe).filter(Recipe.category_id == category_id).first()
+    if recipe_exists:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Cannot delete category because recipes are still assigned to it."
         )
 
     db.delete(category)
