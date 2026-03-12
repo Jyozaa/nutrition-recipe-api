@@ -388,6 +388,46 @@
       "cook_time_minutes": 2,
       "difficulty_level": "easy",
       "category_name": "Dessert"
+    },
+    {
+    "name": "Tofu Salad Bowl",
+    "description": "Light tofu salad with lettuce and tomato.",
+    "instructions": "Pan-fry tofu. Chop lettuce and tomato. Combine and serve.",
+    "servings": 2,
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 8,
+    "difficulty_level": "easy",
+    "category_name": "Lunch"
+    },
+    {
+    "name": "Cheese Omelette Toast",
+    "description": "Toast served with omelette and cheddar cheese.",
+    "instructions": "Toast the bread. Cook the egg omelette. Add cheddar and serve.",
+    "servings": 1,
+    "prep_time_minutes": 6,
+    "cook_time_minutes": 7,
+    "difficulty_level": "easy",
+    "category_name": "Breakfast"
+    },
+    {
+    "name": "Chicken Pasta Plate",
+    "description": "Pasta served with chicken and tomato.",
+    "instructions": "Cook pasta. Grill chicken. Slice tomato. Combine and serve.",
+    "servings": 2,
+    "prep_time_minutes": 12,
+    "cook_time_minutes": 20,
+    "difficulty_level": "medium",
+    "category_name": "Dinner"
+    },
+    {
+    "name": "Overnight Oats Cup",
+    "description": "Oats soaked in milk with banana and yogurt.",
+    "instructions": "Mix oats and milk. Chill overnight. Top with banana and yogurt before serving.",
+    "servings": 1,
+    "prep_time_minutes": 5,
+    "cook_time_minutes": 0,
+    "difficulty_level": "easy",
+    "category_name": "Breakfast"
     }
   ],
   "recipe_ingredients": [
@@ -422,6 +462,25 @@
     { "recipe_name": "Yogurt Berry Cup", "ingredient_name": "Strawberry", "quantity_g": 100 },
 
     { "recipe_name": "Chocolate Strawberry Bites", "ingredient_name": "Dark Chocolate", "quantity_g": 50 },
-    { "recipe_name": "Chocolate Strawberry Bites", "ingredient_name": "Strawberry", "quantity_g": 120 }
+    { "recipe_name": "Chocolate Strawberry Bites", "ingredient_name": "Strawberry", "quantity_g": 120 },
+
+    { "recipe_name": "Tofu Salad Bowl", "ingredient_name": "Tofu", "quantity_g": 160 },
+    { "recipe_name": "Tofu Salad Bowl", "ingredient_name": "Lettuce", "quantity_g": 100 },
+    { "recipe_name": "Tofu Salad Bowl", "ingredient_name": "Tomato", "quantity_g": 80 },
+    { "recipe_name": "Tofu Salad Bowl", "ingredient_name": "Olive Oil", "quantity_g": 8 },
+
+    { "recipe_name": "Cheese Omelette Toast", "ingredient_name": "Egg", "quantity_g": 120 },
+    { "recipe_name": "Cheese Omelette Toast", "ingredient_name": "Cheddar Cheese", "quantity_g": 40 },
+    { "recipe_name": "Cheese Omelette Toast", "ingredient_name": "Bread", "quantity_g": 70 },
+
+    { "recipe_name": "Chicken Pasta Plate", "ingredient_name": "Chicken Breast", "quantity_g": 180 },
+    { "recipe_name": "Chicken Pasta Plate", "ingredient_name": "Pasta", "quantity_g": 160 },
+    { "recipe_name": "Chicken Pasta Plate", "ingredient_name": "Tomato", "quantity_g": 90 },
+    { "recipe_name": "Chicken Pasta Plate", "ingredient_name": "Olive Oil", "quantity_g": 10 },
+
+    { "recipe_name": "Overnight Oats Cup", "ingredient_name": "Oats", "quantity_g": 70 },
+    { "recipe_name": "Overnight Oats Cup", "ingredient_name": "Milk", "quantity_g": 180 },
+    { "recipe_name": "Overnight Oats Cup", "ingredient_name": "Banana", "quantity_g": 90 },
+    { "recipe_name": "Overnight Oats Cup", "ingredient_name": "Greek Yogurt", "quantity_g": 100 }
   ]
 }
