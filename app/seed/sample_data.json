@@ -1,0 +1,54 @@
+{
+  "categories": [
+    { "name": "Breakfast" },
+    { "name": "Lunch" },
+    { "name": "Dinner" }
+  ],
+  "ingredients": [
+    {
+      "name": "Chicken Breast",
+      "calories_per_100g": 165,
+      "protein_per_100g": 31,
+      "carbs_per_100g": 0,
+      "fat_per_100g": 3.6,
+      "estimated_cost_per_100g": 1.2,
+      "contains_gluten": false,
+      "contains_dairy": false,
+      "contains_nuts": false,
+      "contains_soy": false,
+      "contains_egg": false,
+      "is_vegan": false,
+      "is_vegetarian": false
+    },
+    {
+      "name": "Rice",
+      "calories_per_100g": 130,
+      "protein_per_100g": 2.7,
+      "carbs_per_100g": 28,
+      "fat_per_100g": 0.3,
+      "estimated_cost_per_100g": 0.25,
+      "contains_gluten": false,
+      "contains_dairy": false,
+      "contains_nuts": false,
+      "contains_soy": false,
+      "contains_egg": false,
+      "is_vegan": true,
+      "is_vegetarian": true
+    },
+    {
+      "name": "Milk",
+      "calories_per_100g": 42,
+      "protein_per_100g": 3.4,
+      "carbs_per_100g": 5,
+      "fat_per_100g": 1,
+      "estimated_cost_per_100g": 0.15,
+      "contains_gluten": false,
+      "contains_dairy": true,
+      "contains_nuts": false,
+      "contains_soy": false,
+      "contains_egg": false,
+      "is_vegan": false,
+      "is_vegetarian": true
+    }
+  ]
+}
